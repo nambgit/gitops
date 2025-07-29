@@ -1,12 +1,17 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: guestbook-service
+  creationTimestamp: null
+  labels:
+    app: guestbook
+    tier: front
+  name: guestbook
 spec:
+  ports:
+  - name: "80"
+    port: 80
+    protocol: TCP
+    targetPort: 8080
   selector:
     app: guestbook
-  ports:
-  - port: 80
-    targetPort: 8080
-    protocol: TCP
-  type: NodePort # Hoặc NodePort nếu không có LoadBalancer
+  type: ClusterIP

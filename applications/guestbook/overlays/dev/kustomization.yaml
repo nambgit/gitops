@@ -2,5 +2,15 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
 - ../../base
+replicas:
+- count: 2
+  name: guestbook
+namespace: staging
+commonAnnotations:
+  supported-by: nambgit@gmail.com
+labels:
+- includeSelectors: false
+  pairs:
+    project: instavote
 patches:
-- path: deployment-patch.yaml
+- path: service.yaml

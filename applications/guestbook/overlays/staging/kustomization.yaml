@@ -5,7 +5,7 @@ resources:
 replicas:
 - count: 2
   name: guestbook
-namespace: prod
+namespace: gb-prod
 commonAnnotations:
   supported-by: nambgit@gmail.com
 labels:

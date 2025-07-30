@@ -5,7 +5,7 @@ resources:
 replicas:
 - count: 2
   name: guestbook
-namespace: staging
+namespace: gb-staging
 commonAnnotations:
   supported-by: nambgit@gmail.com
 labels:
